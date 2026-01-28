@@ -1,5 +1,6 @@
 import os
 from ..data.vector import files_collection
+from ..data.file import scan_child_dirs
 from ..git.gitignore import get_gitignore_spec
 
 def find(query: str) -> None:
@@ -20,17 +21,3 @@ def find(query: str) -> None:
     
     for id in ids:
         print(id)
-
-def scan_child_dirs(root: str) -> None:
-    dirs = []
-    ls = os.listdir(root)
-
-    for item in ls:
-        path = os.path.join(root, item)
-
-        if os.path.isdir(path):
-            dirs.append(path)
-            dirs.extend(scan_child_dirs(path))
-
-    return dirs
-
