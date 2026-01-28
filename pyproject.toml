@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-pctx = "pctx"
+pctx = "pctx.cli:app"
 
 [project.entry-points."pipx.run"]
-pctx = "pctx"
+pctx = "pctx.cli:app"
